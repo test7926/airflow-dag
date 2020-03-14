@@ -45,4 +45,5 @@ failing = KubernetesPodOperator(namespace='airflow',
                           dag=dag,
                           in_cluster=True
                           )
-start >> passing >> failing
+start >> passing
+start >> failing
