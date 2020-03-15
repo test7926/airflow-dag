@@ -29,9 +29,7 @@ passing = KubernetesPodOperator(namespace='airflow',
                           labels={"foo": "bar"},
                           name="passing-test",
                           task_id="passing-task",
-                          get_logs=True,
-                          dag=dag,
-                          in_cluster=True
+                          get_logs=True
                           )
 
 failing = KubernetesPodOperator(namespace='airflow',
@@ -41,9 +39,7 @@ failing = KubernetesPodOperator(namespace='airflow',
                           labels={"foo": "bar"},
                           name="fail",
                           task_id="failing-task",
-                          get_logs=True,
-                          dag=dag,
-                          in_cluster=True
+                          get_logs=True
                           )
 
 passing >> failing
