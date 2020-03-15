@@ -20,7 +20,7 @@ dag = DAG('kubernetes_sample', description='Simple kubernetes sample DAG',
           schedule_interval='0 12 * * *',
           start_date=datetime(2017, 3, 20), catchup=False)
 
-start = DummyOperator(task_id='dummy_task', retries=3, dag=dag)
+#start = DummyOperator(task_id='dummy_task', retries=3, dag=dag)
 
 passing = KubernetesPodOperator(namespace='airflow',
                           image="python:3.6",
